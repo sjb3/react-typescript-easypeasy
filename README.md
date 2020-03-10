@@ -1,3 +1,11 @@
+## Setup
+
+- eslint + prettier - 'https://dev.to/benweiser/how-to-set-up-eslint-typescript-prettier-with-create-react-app-3675'
+
+Do please check the eslintrc out
+
+Also create prettierrc as well-'https://prettier.io/docs/en/install.html'
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
