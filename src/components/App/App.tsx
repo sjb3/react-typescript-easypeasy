@@ -15,12 +15,11 @@ function App() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-          ></IconButton>
-          <img src="https://img.icons8.com/doodle/48/000000/hamburger.png" />
+          <IconButton edge="start" color="inherit" aria-label="menu" />
+          <img
+            src="https://img.icons8.com/doodle/48/000000/hamburger.png"
+            alt="hamburger icon"
+          />
           <Typography variant="h6" className={classes.title}>
             News
           </Typography>
