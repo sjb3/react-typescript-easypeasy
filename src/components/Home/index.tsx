@@ -3,12 +3,14 @@ import React from 'react';
 
 import { Card, CardContent, Typography } from '@material-ui/core';
 import { useStoreState } from '../../hooks';
+import { GuestBookEntryForm } from '../GuestBookEntryForm';
 
-export const Home = () => {
+export const Home: React.FC = () => {
   const entries = useStoreState(state => state.guestbook.entries);
 
   return (
     <div>
+      <GuestBookEntryForm />
       {entries.map(entry => (
         <Card>
           <CardContent>
