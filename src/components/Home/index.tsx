@@ -6,7 +6,7 @@ import { GuestBookEntryForm } from '../GuestBookEntryForm';
 import useStyles from './styles';
 
 export const Home: React.FC = () => {
-  const entries = useStoreState(state => state.guestbook.entries);
+  const reverseEntries = useStoreState(state => state.guestbook.entries);
   const getEntries = useStoreActions(state => state.guestbook.getEntries);
   const classes = useStyles();
 
@@ -17,13 +17,13 @@ export const Home: React.FC = () => {
   return (
     <div>
       <GuestBookEntryForm />
-      {entries.map(entry => (
+      {reverseEntries.map(entry => (
         <Card key={entry.name} className={classes.entryCard}>
           <CardContent>
             <Typography variant="h3">{entry.name}</Typography>
             <Typography variant="body1">{entry.content}</Typography>
             <Typography variant="caption" style={{ fontStyle: 'italic' }}>
-              {entry.submitted ? entry.submitted.toLocaleDateString() : null}
+              {entry.submitted}
             </Typography>
           </CardContent>
         </Card>

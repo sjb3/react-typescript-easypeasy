@@ -1,4 +1,4 @@
-import { action, thunk } from 'easy-peasy';
+import { action, thunk, computed } from 'easy-peasy';
 import GuestBookModel from '../interfaces/GuestBookModel';
 
 const GuestBook: GuestBookModel = {
@@ -10,11 +10,13 @@ const GuestBook: GuestBookModel = {
     //   submitted: new Date(),
     // },
   ],
+  reverseEntries: computed(state => state.entries.slice().reverse()),
   setEntries: action((state, entries) => {
     state.entries = entries;
   }),
   addEntry: action((state, entry) => {
-    state.entries.unshift(entry);
+    // state.entries.unshift(entry);
+    state.entries.push(entry);
   }),
   createEntry: thunk(async (state, entry) => {
     // will be handled by back end
