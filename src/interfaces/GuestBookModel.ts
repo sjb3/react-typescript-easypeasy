@@ -1,7 +1,10 @@
-// import { Action } from 'easy-peasy';
+import { Action, Thunk } from 'easy-peasy';
 import GuestBookEntry from './GuestBookEntry';
 
 export default interface GuestBookModel {
   entries: GuestBookEntry[];
-  // addEntry: Action<GuestBookModel, GuestBookEntry>; // 👈 declaring our action
+  setEntries: Action<GuestBookModel, GuestBookEntry[]>;
+  addEntry: Action<GuestBookModel, GuestBookEntry>;
+  createEntry: Thunk<GuestBookModel, GuestBookEntry>; // 👈 declaring our action
+  getEntries: Thunk<GuestBookModel>;
 }
